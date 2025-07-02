@@ -1,0 +1,92 @@
+:root {
+  --tab-main: #823733;
+  --tab-gray: #F0F0F0;
+}
+
+.red-tab {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem;
+  background: #fff;
+  border-bottom: 2px solid var(--tab-gray);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.red-tab::-webkit-scrollbar {
+  display: none;
+}
+.red-tab .tab-title {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid transparent;
+  margin-right: 1rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+.red-tab .tab-title.active {
+  border-bottom: 3px solid var(--tab-main);
+  color: var(--tab-main);
+  font-weight: bold;
+}
+.red-tab .tab-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.tab-content {
+  display: none;
+  background: #fff;
+  padding: 1rem;
+  min-height: 320px;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+}
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  position: relative;
+}
+.wp-tab-post-list {
+  list-style: none;
+  padding-left: 1rem;
+}
+.wp-tab-post-list li {
+  margin: 0.75rem 0;
+}
+.wp-tab-post-list a {
+  text-decoration: none;
+  color: #1a4c93;
+}
+.wp-tab-post-list a:hover {
+  color: #823733;
+}
+.holiday-iframe-container {
+  height: 100%;
+  width: 100%;
+}
+.holiday-iframe-container iframe {
+  min-height: 320px;
+  max-height: 320px;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+@media (max-width: 768px) {
+  .red-tab {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .red-tab {
+    font-size: 0.8rem;
+  }
+}
